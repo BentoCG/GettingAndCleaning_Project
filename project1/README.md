@@ -27,10 +27,10 @@ You should create one R script called run_analysis.R that does the following.
 Good luck!
 
 
-##To reproce this Project follow this steps:
+##To reproduce this Project follow this steps:
 1. Open the R script `run_analysis.r` using a text editor.
 2. Swap the argument of the `setwd` function call to the folder you unzipped the required downloaded data.
-3. Run the R script `run_analysis.r`. It will call an .Rmd file with the commented code.
+3. Run the R script `run_analysis.r`. It will call an .Rmd file with required code and comments about how it works
 
 
 ##Outputs:
