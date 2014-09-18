@@ -206,11 +206,9 @@ hr {
 <body>
 <p>##Preparation</p>
 
-<p>####To work this out you will need to modify the working directory to the folder
-####you unzipped the required data</p>
+<p>####Loads the required libraries</p>
 
 <pre><code class="r">library(data.table); library(reshape2)
-setwd(&quot;C:/R workspace/getting and cleaning data/UCI HAR Dataset&quot;)
 </code></pre>
 
 <p>##Loading Data</p>
@@ -267,7 +265,8 @@ dt_Final[,&quot;Activity&quot;] = factor(dt_Final[,&quot;Activity&quot;],
 <p>####Creates a tidy data frame using the previous version of the main data frame.
 The new data frame, <strong>dt_Tidy</strong>, now has a single row for every activity on 
 every subject, with the average value of all variable values for that same
-activity and subject. Finally, tidy data is outputted in a csv file.</p>
+activity and subject. Finally, tidy data is outputted in a txt file separated
+by tabs.</p>
 
 <pre><code class="r">dt_Tidy = data.frame()
 for ( subj in unique(dt_Final$Subject)){
@@ -282,7 +281,8 @@ for ( subj in unique(dt_Final$Subject)){
 dt_Tidy = dt_Tidy[order(dt_Tidy$Subject),]
 row.names(dt_Tidy) = 1:dim(dt_Tidy)[1]
 
-write.csv(dt_Tidy, file = &quot;ActivityMeasurements.csv&quot;)
+write.table(dt_Tidy, file = &quot;ActivityMeasurements.txt&quot;, row.name = FALSE, 
+            sep = &quot;\t&quot;)
 </code></pre>
 
 </body>

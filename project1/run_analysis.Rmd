@@ -72,7 +72,8 @@ dt_Final[,"Activity"] = factor(dt_Final[,"Activity"],
 ####Creates a tidy data frame using the previous version of the main data frame.
 The new data frame, **dt_Tidy**, now has a single row for every activity on 
 every subject, with the average value of all variable values for that same
-activity and subject. Finally, tidy data is outputted in a csv file.
+activity and subject. Finally, tidy data is outputted in a txt file separated
+by tabs.
 
 ```{r tidyingUp}
 dt_Tidy = data.frame()
@@ -88,5 +89,6 @@ for ( subj in unique(dt_Final$Subject)){
 dt_Tidy = dt_Tidy[order(dt_Tidy$Subject),]
 row.names(dt_Tidy) = 1:dim(dt_Tidy)[1]
 
-write.csv(dt_Tidy, file = "ActivityMeasurements.csv")
+write.table(dt_Tidy, file = "ActivityMeasurements.txt", row.name = FALSE, 
+            sep = "\t")
 ```

@@ -34,5 +34,5 @@ Good luck!
 
 
 ##Outputs:
-* Tidy dataset  `ActivityMeasurements.csv` 
+* Tidy dataset  `ActivityMeasurements.txt` (separated by tabs)
 * Codebook file `codebook.md`

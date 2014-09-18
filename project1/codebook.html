@@ -168,46 +168,110 @@ hr {
 <p>Features on this database were obtained from the accelerometer (&#39;Acc&#39;) and gyroscope(&#39;Gyro&#39;) 
 3-axial raw signals. Prefix &#39;t&#39; stands for time domain signals, while &#39;f&#39; indicates frequency 
 domain signals. &#39;Mag&#39; denotes the magnitude of these XYZ signals according to the Euclidean norm.
-Every possible combination of this. The acceleration signal was separated between &#39;Body&#39; and &#39;Gravity&#39;.</p>
+Every possible combination of this. The acceleration signal was separated between &#39;Body&#39; and &#39;Gravity&#39;,
+while Gyroscope signals are only available for &#39;Body&#39;. Columns 1 and 2 stand for the Subject ID and
+the activity type.</p>
 
-<p>###This dataset is restricted to the <em>mean</em> and <em>std</em> of every possible variable combination explained
-###above, adding up a total of 66 variables.</p>
+<h4>This dataset is restricted to the <em>mean</em> and <em>std</em> of every possible variable combination explained</h4>
+
+<h4>above, adding up a total of 66 variables.</h4>
 
 <h2>Three-axial Variables</h2>
 
-<p>####Signals from all axes are separated in different columns (i.e. There is a &#39;tBodyAcc-X&#39;, tBodyAcc-Y&#39;,
-####and a &#39;tBodyAcc-Z&#39; column. </p>
+<h4>Signals from all axes are separated in different columns (i.e. There is a &#39;tBodyAcc-X&#39;, tBodyAcc-Y&#39;,</h4>
 
-<p>tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ</p>
+<h4>and a &#39;tBodyAcc-Z&#39; column.) For each axis, there is a mean and std measure.</h4>
+
+<table><thead>
+<tr>
+<th>Variable</th>
+<th>Index</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1. tBodyAcc-XYZ</td>
+<td>(columns 3 - 8)</td>
+</tr>
+<tr>
+<td>2. tGravityAcc-XYZ</td>
+<td>(columns 9 - 14)</td>
+</tr>
+<tr>
+<td>3. tBodyAccJerk-XYZ</td>
+<td>(columns 15 - 20)</td>
+</tr>
+<tr>
+<td>4. tBodyGyro-XYZ</td>
+<td>(columns 21 - 26)</td>
+</tr>
+<tr>
+<td>5. tBodyGyroJerk-XYZ</td>
+<td>(columns 27 - 32)</td>
+</tr>
+<tr>
+<td>6. fBodyAcc-XYZ</td>
+<td>(columns 33 - 38)</td>
+</tr>
+<tr>
+<td>7. fBodyAccJerk-XYZ</td>
+<td>(columns 39 - 44)</td>
+</tr>
+<tr>
+<td>8. fBodyGyro-XYZ</td>
+<td>(columns 45 - 50)</td>
+</tr>
+</tbody></table>
 
 <p>##Magnitude Variables</p>
 
-<p>fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag</p>
+<h4>Duplicated for mean and std measur</h4>
 
-<p>##Signal Averaging Variables</p>
+<table><thead>
+<tr>
+<th>Variable</th>
+<th>Index</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>9.  fBodyAccMag</td>
+<td>(columns 51 - 52)</td>
+</tr>
+<tr>
+<td>10. fBodyAccJerkMag</td>
+<td>(columns 53 - 54)</td>
+</tr>
+<tr>
+<td>11. fBodyGyroMag</td>
+<td>(columns 55 - 56)</td>
+</tr>
+<tr>
+<td>12. fBodyGyroJerkMag</td>
+<td>(columns 57 - 58)</td>
+</tr>
+<tr>
+<td>13. tBodyAccMag</td>
+<td>(columns 59 - 60)</td>
+</tr>
+<tr>
+<td>14. tGravityAccMag</td>
+<td>(columns 61 - 52)</td>
+</tr>
+<tr>
+<td>15. tBodyAccJerkMag</td>
+<td>(columns 63 - 64)</td>
+</tr>
+<tr>
+<td>16. tBodyGyroMag</td>
+<td>(columns 65 - 66)</td>
+</tr>
+<tr>
+<td>17. tBodyGyroJerkMag</td>
+<td>(columns 67 - 68)</td>
+</tr>
+</tbody></table>
 
-<p>gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean</p>
-
-<p><strong>For further information, check &#39;features_info.&#39;</strong></p>
+<p><strong>For further information, check &#39;features_info.txt&#39;, present on the downloaded
+data</strong></p>
 
 </body>
 
