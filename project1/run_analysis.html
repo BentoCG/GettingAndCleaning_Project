@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title></title>
+<title>Preparation</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -204,17 +204,16 @@ hr {
 </head>
 
 <body>
-<p>##Preparation</p>
+<h2>Preparation</h2>
 
-<p>####Loads the required libraries</p>
+<h4>Loads the required libraries</h4>
 
 <pre><code class="r">library(data.table); library(reshape2)
 </code></pre>
 
-<p>##Loading Data</p>
+<h2>Loading Data</h2>
 
-<p>####Reads most of the required data into data.frames and merges <strong>Activity</strong> and
-####<strong>Subject</strong> from train and test.</p>
+<h4>Reads most of the required data into data.frames and merges <strong>Activity</strong> and <strong>Subject</strong> from train and test.</h4>
 
 <pre><code class="r">Activity_Labels = read.table(&quot;activity_labels.txt&quot;)
 Activity_Train = read.table(file.path(&quot;train&quot;, &quot;y_train.txt&quot;))
@@ -226,18 +225,18 @@ Subject_Test  = read.table(file.path(&quot;test&quot; , &quot;subject_test.txt&q
 Subject = rbind(Subject_Train, Subject_Test)
 </code></pre>
 
-<p>##Loading Data 2</p>
+<h2>Loading Data 2</h2>
 
-<p>####Reads the test and train observation and merges them into a single data frame</p>
+<h4>Reads the test and train observation and merges them into a single data frame</h4>
 
 <pre><code class="r">dt_Train = read.table(file.path(&quot;train&quot;, &quot;X_train.txt&quot;))
 dt_Test = read.table(file.path(&quot;test&quot;, &quot;X_test.txt&quot;))
 dt_Final = rbind(dt_Train, dt_Test)
 </code></pre>
 
-<p>##Subsetting</p>
+<h2>Subsetting</h2>
 
-<p>####Subsets the <strong>dt_Final</strong> data frame to include only <em>mean</em> and <em>std</em> variables </p>
+<h4>Subsets the <strong>dt_Final</strong> data frame to include only <em>mean</em> and <em>std</em> variables</h4>
 
 <pre><code class="r">features = read.table(&quot;features.txt&quot;)
 setnames(features,c(&quot;featureNum&quot;, &quot;featureName&quot;))
@@ -246,10 +245,9 @@ features = features[logic,]
 dt_Final = dt_Final[,features[,&quot;featureNum&quot;]]
 </code></pre>
 
-<p>##Labelling</p>
+<h2>Labelling</h2>
 
-<p>####Adds up the Activity and Subject columns to the main data frame and labels
-####both activities and column names.</p>
+<h4>Adds up the Activity and Subject columns to the main data frame and labels both activities and column names.</h4>
 
 <pre><code class="r">dt_Final = cbind(Activity, dt_Final)
 dt_Final = cbind(Subject, dt_Final)
@@ -260,13 +258,16 @@ dt_Final[,&quot;Activity&quot;] = factor(dt_Final[,&quot;Activity&quot;],
                                labels = Activity_Labels[,2])
 </code></pre>
 
-<p>##Tidying up</p>
+<h2>Tidying up</h2>
 
-<p>####Creates a tidy data frame using the previous version of the main data frame.
-The new data frame, <strong>dt_Tidy</strong>, now has a single row for every activity on 
+<h4>Creates a tidy data frame using the previous version of the main data frame.</h4>
+
+<blockquote>
+<p>The new data frame, <strong>dt_Tidy</strong>, now has a single row for every activity on 
 every subject, with the average value of all variable values for that same
 activity and subject. Finally, tidy data is outputted in a txt file separated
 by tabs.</p>
+</blockquote>
 
 <pre><code class="r">dt_Tidy = data.frame()
 for ( subj in unique(dt_Final$Subject)){

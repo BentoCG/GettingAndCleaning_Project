@@ -5,19 +5,19 @@ date: Wednesday, September 17, 2014
 output: html_document
 ---
 
-##Preparation
+## Preparation
 
-####Loads the required libraries
+#### Loads the required libraries
 
 
 ```r
 library(data.table); library(reshape2)
 ```
 
-##Loading Data
+## Loading Data
 
-####Reads most of the required data into data.frames and merges **Activity** and
-####**Subject** from train and test.
+#### Reads most of the required data into data.frames and merges **Activity** and **Subject** from train and test.
+
 
 
 ```r
@@ -31,9 +31,9 @@ Subject_Test  = read.table(file.path("test" , "subject_test.txt" ))
 Subject = rbind(Subject_Train, Subject_Test)
 ```
 
-##Loading Data 2
+## Loading Data 2
 
-####Reads the test and train observation and merges them into a single data frame
+#### Reads the test and train observation and merges them into a single data frame
 
 
 ```r
@@ -42,9 +42,9 @@ dt_Test = read.table(file.path("test", "X_test.txt"))
 dt_Final = rbind(dt_Train, dt_Test)
 ```
 
-##Subsetting
+## Subsetting
 
-####Subsets the **dt_Final** data frame to include only *mean* and *std* variables 
+#### Subsets the **dt_Final** data frame to include only *mean* and *std* variables 
 
 
 ```r
@@ -55,10 +55,10 @@ features = features[logic,]
 dt_Final = dt_Final[,features[,"featureNum"]]
 ```
 
-##Labelling
+## Labelling
 
-####Adds up the Activity and Subject columns to the main data frame and labels
-####both activities and column names.
+#### Adds up the Activity and Subject columns to the main data frame and labels both activities and column names.
+
 
 
 ```r
@@ -71,10 +71,10 @@ dt_Final[,"Activity"] = factor(dt_Final[,"Activity"],
                                labels = Activity_Labels[,2])
 ```
 
-##Tidying up
+## Tidying up
 
-####Creates a tidy data frame using the previous version of the main data frame.
-The new data frame, **dt_Tidy**, now has a single row for every activity on 
+#### Creates a tidy data frame using the previous version of the main data frame.
+> The new data frame, **dt_Tidy**, now has a single row for every activity on 
 every subject, with the average value of all variable values for that same
 activity and subject. Finally, tidy data is outputted in a txt file separated
 by tabs.

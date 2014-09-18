@@ -1,18 +1,19 @@
 CODEBOOK
 =========
-Features on this database were obtained from the accelerometer ('Acc') and gyroscope('Gyro') 
+> Features on this database were obtained from the accelerometer ('Acc') and gyroscope('Gyro') 
 3-axial raw signals. Prefix 't' stands for time domain signals, while 'f' indicates frequency 
 domain signals. 'Mag' denotes the magnitude of these XYZ signals according to the Euclidean norm.
 Every possible combination of this. The acceleration signal was separated between 'Body' and 'Gravity',
 while Gyroscope signals are only available for 'Body'. Columns 1 and 2 stand for the Subject ID and
 the activity type.
+                                                                                                                                
+####  This dataset is restricted to the *mean* and *std* of every possible variable combination explained above, adding up a total of 66 variables.
 
-#### This dataset is restricted to the *mean* and *std* of every possible variable combination explained
-#### above, adding up a total of 66 variables.
-
+                                                                                                                         
 ## Three-axial Variables
-#### Signals from all axes are separated in different columns (i.e. There is a 'tBodyAcc-X', tBodyAcc-Y',
-#### and a 'tBodyAcc-Z' column.) For each axis, there is a mean and std measure. 
+
+####  Signals from all axes are separated in different columns (i.e. There is a 'tBodyAcc-X', tBodyAcc-Y', and a 'tBodyAcc-Z' column.) For each axis, there is a mean and std measure. 
+
 
  Variable              | Index
 -----------------------|-----------------
@@ -25,8 +26,9 @@ the activity type.
 7. fBodyAccJerk-XYZ    | (columns 39 - 44)
 8. fBodyGyro-XYZ       | (columns 45 - 50)
 
-##Magnitude Variables
-#### Duplicated for mean and std measur
+##  Magnitude Variables
+
+####  Duplicated for mean and std measures
 
 Variable               | Index
 -----------------------|-----------------
